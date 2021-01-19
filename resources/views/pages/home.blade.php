@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('judul')
-    ShopShop - Home
+@section('title')
+    Home - ShopShop
 @endsection
 
 @section('content')

@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
     // });
     
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/categories', 'CategoryController@index')->name('category');
+
+Route::get('/details/{id}', 'DetailController@index')->name('detail');
     
 Auth::routes();
