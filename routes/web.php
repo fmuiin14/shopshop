@@ -31,4 +31,6 @@ Route::get('/register/success', 'Auth\RegisterController@success')->name('regist
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::get('/dashboard/products', 'DashboardProductController@index')->name('dashboard-products');
+
 Auth::routes();
