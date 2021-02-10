@@ -32,7 +32,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                             <div class="categories__item set-bg" data-setbg="img/categories/category-2.jpg">
                                 <div class="categories__text">
-                                    <h4>Sneaker</h4>
+                                    <h1>Sneaker</h1>
                                     <p>Berbagai macam sepatu untuk aktivitas harianmu.</p>
                                     <a href="#">Shop now</a>
                                 </div>
@@ -41,8 +41,8 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                             <div class="categories__item set-bg" data-setbg="img/categories/category-3.jpg">
                                 <div class="categories__text">
-                                    <h4>Kid’s fashion</h4>
-                                    <p>273 items</p>
+                                    <h1>Kid’s</h1>
+                                    <p>Buat mereka percaya diri dengan produk terbaik kami.</p>
                                     <a href="#">Shop now</a>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                             <div class="categories__item set-bg" data-setbg="img/categories/category-4.jpg">
                                 <div class="categories__text">
-                                    <h4>Make Up</h4>
+                                    <h1>Make Up</h1>
                                     <p>Halal dan Terjamin Kualitasnya.</p>
                                     <a href="#">Shop now</a>
                                 </div>
@@ -59,7 +59,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                             <div class="categories__item set-bg" data-setbg="img/categories/category-5.jpg">
                                 <div class="categories__text">
-                                    <h4>Tools</h4>
+                                    <h1>Tools</h1>
                                     <p>Penuhi berbagai macam alat pertukangan di rumah Anda.</p>
                                     <a href="#">Shop now</a>
                                 </div>
