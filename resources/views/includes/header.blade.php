@@ -37,7 +37,7 @@
                 <nav class="header__menu">
                     <ul>
                         <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="#">Categories</a></li>
+                        <li><a href="{{route('category')}}">Categories</a></li>
                         <li><a href="#">Rewards</a></li>
                         <li><a href="./shop.html">Sign Up</a></li>
                         <li><a class="btn btn-primary px-4" href="./contact.html">Sign In</a></li>
