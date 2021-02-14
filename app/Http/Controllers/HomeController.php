@@ -9,7 +9,6 @@ use App\Product;
 
 class HomeController extends Controller
 {
-    
 
     /**
      * Show the application dashboard.
@@ -19,10 +18,13 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::take(6)->get();
+        // dd($categories);
+
+        $products = Product::with(['galleries'])->take(8)->get();
         
         return view('pages.home', [
-            'categories' => $categories
+            'categories' => $categories, 
+            'products' => $products 
         ]);
-
     }
 }

@@ -1,6 +1,5 @@
 <!-- Js Plugins -->
 <script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.magnific-popup.min.js"></script>
 <script src="/js/jquery-ui.min.js"></script>
 <script src="/js/mixitup.min.js"></script>
@@ -16,3 +15,5 @@
     AOS.init();
 </script>
 <script src="/script/navbar-scroll.js"></script>
+<!-- Production version -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>

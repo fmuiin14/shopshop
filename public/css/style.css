@@ -456,7 +456,7 @@ ol {
 }
 
 .header__right__widget {
-	display: inline-block;
+	display: flex;
 }
 
 .header__right__widget li {
