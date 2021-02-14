@@ -1,247 +1,254 @@
 @extends('layouts.app')
 
 @section('title')
-Cart - Store
+    Cart - ShopShop
 @endsection
 
 @section('content')
-<!-- Page Content -->
-<div class="page-content page-cart">
-    <section class="store-breadcrumbs" data-aos="fade-down" data-aos-delay="100">
+    <!-- Shop Cart Section Begin -->
+    <section class="shop-cart spad" style="padding-bottom: 0px;">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <nav>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active">
-                                Cart
-                            </li>
-                        </ol>
-                    </nav>
+                <div class="col-lg-12">
+                    <div class="shop__cart__table table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Seller</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="/img/shop-cart/cp-1.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Chain bucket bag</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__product__item">
+                                        <div class="cart__product__item__title">
+                                            <h6>Fathul Muiin</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 150.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="/img/shop-cart/cp-2.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Zip-pockets pebbled tote briefcase</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__product__item">
+                                        <div class="cart__product__item__title">
+                                            <h6>Fathul Muiin</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 170.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="/img/shop-cart/cp-3.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Black jean</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__product__item">
+                                        <div class="cart__product__item__title">
+                                            <h6>Fathul Muiin</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 85.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="cart__product__item">
+                                        <img src="/img/shop-cart/cp-4.jpg" alt="">
+                                        <div class="cart__product__item__title">
+                                            <h6>Cotton Shirt</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__product__item">
+                                        <div class="cart__product__item__title">
+                                            <h6>Fathul Muiin</h6>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price">$ 55.0</td>
+                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
+    <!-- Shop Cart Section End -->
 
-    <section class="store-cart">
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad" style="padding-top: 0px;">
         <div class="container">
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12 table-responsive">
-                    <table class="table table-borderless table-cart">
-                        <thead>
-                            <tr>
-                                <td>Image</td>
-                                <td>Name &amp; Seller</td>
-                                <td>Price</td>
-                                <td>Menu</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php $totalPrice = 0 @endphp
-                            @foreach ($carts as $cart)
-                            <tr>
-                                <td style="width: 20%;">
-                                    @if ($cart->product->galleries)
-                                    <img src="{{Storage::url($cart->product->galleries->first()->photos)}}"
-                                        class="cart-image" alt="img">
-                                    @endif
-                                </td>
-                                <td style="width: 35%;">
-                                    <div class="product-title">{{$cart->product->name}}</div>
-                                    <div class="product-subtitle">by {{$cart->product->user->store_name}}</div>
-                                </td>
-                                <td style="width: 35%;">
-                                    <div class="product-title">$ {{number_format($cart->product->price)}}</div>
-                                    <div class="product-subtitle">USD</div>
-                                </td>
-                                <td style="width: 20%;">
-                                    <form action="{{route('cart-delete', $cart->id)}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-remove-cart">
-                                            Remove
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @php $totalPrice += $cart->product->price @endphp
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up" data-aos-delay="150">
-                <div class="col-12">
-                    <hr>
-                </div>
-
-                <div class="col-12">
-                    <h2 class="mb-4">Shipping Details</h2>
-                </div>
-            </div>
-
-            <form action="{{route('checkout')}}" id="locations" enctype="multipart/form-data" method="POST">
-                @csrf
-                <input type="hidden" name="total_price" value="{{$totalPrice}}">
-
-                <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="address_one">Address 1</label>
-                            <input type="text" class="form-control" id="address_one" name="address_one"
-                                value="Sentra Duta Cemara">
+            <form action="#" class="checkout__form">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h5>Billing detail</h5>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>First Name <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Last Name <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Country <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Address <span>*</span></p>
+                                    <input type="text" placeholder="Street Address">
+                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )">
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Town/City <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Country/State <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Postcode/Zip <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Phone <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Email <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="checkout__form__checkbox">
+                                    <label for="acc">
+                                        Create an acount?
+                                        <input type="checkbox" id="acc">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <p>Create am acount by entering the information below. If you are a returing
+                                        customer login at the <br />top of the page</p>
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Account Password <span>*</span></p>
+                                    <input type="text">
+                                </div>
+                                <div class="checkout__form__checkbox">
+                                    <label for="note">
+                                        Note about your order, e.g, special noe for delivery
+                                        <input type="checkbox" id="note">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__form__input">
+                                    <p>Oder notes <span>*</span></p>
+                                    <input type="text"
+                                        placeholder="Note about your order, e.g, special noe for delivery">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="address_two">Address 2</label>
-                            <input type="text" class="form-control" id="address_two" name="address_two"
-                                value="Blok B2 No. 34">
+                    <div class="col-lg-4">
+                        <div class="checkout__order">
+                            <h5>Your order</h5>
+                            <div class="checkout__order__product">
+                                <ul>
+                                    <li>
+                                        <span class="top__text">Product</span>
+                                        <span class="top__text__right">Total</span>
+                                    </li>
+                                    <li>01. Chain buck bag <span>$ 300.0</span></li>
+                                    <li>02. Zip-pockets pebbled<br /> tote briefcase <span>$ 170.0</span></li>
+                                    <li>03. Black jean <span>$ 170.0</span></li>
+                                    <li>04. Cotton shirt <span>$ 110.0</span></li>
+                                </ul>
+                            </div>
+                            <div class="checkout__order__total">
+                                <ul>
+                                    <li>Subtotal <span>$ 750.0</span></li>
+                                    <li>Total <span>$ 750.0</span></li>
+                                </ul>
+                            </div>
+                            <div class="checkout__order__widget">
+                                <label for="o-acc">
+                                    Create an acount?
+                                    <input type="checkbox" id="o-acc">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <p>Create am acount by entering the information below. If you are a returing customer
+                                    login at the top of the page.</p>
+                                <label for="check-payment">
+                                    Cheque payment
+                                    <input type="checkbox" id="check-payment">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label for="paypal">
+                                    PayPal
+                                    <input type="checkbox" id="paypal">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="site-btn">Place oder</button>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="provinces_id">Province</label>
-                            <select class="form-control" id="provinces_id" v-if="provinces" v-model="provinces_id" name="provinces_id">
-                                <option v-for="province in provinces" :value="province.id">@{{province.name}}</option>
-                            </select>
-                            <select v-else class="form-control"></select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="regencies_id">City</label>
-                            <select class="form-control" id="regencies_id" v-if="regencies" v-model="regencies_id"
-                                name="regencies_id">
-                                <option v-for="regency in regencies" :value="regency.id">@{{regency.name}}</option>
-                            </select>
-                            <select v-else class="form-control"></select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="zip_code">Postal Code</label>
-                            <input type="text" class="form-control" id="zip_code" name="zip_code" value="40512">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" name="country" value="Indonesia">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="phone_number">Mobile</label>
-                            <input type="text" class="form-control" id="phone_number" name="phone_number"
-                                value="+628 2020 1111">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="150">
-                    <div class="col-12">
-                        <hr>
-                    </div>
-
-                    <div class="col-12">
-                        <h2 class="mb-1">Payment Informations</h2>
-                    </div>
-                </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-4 col-md-2">
-                        <div class="product-title">
-                            $10
-                        </div>
-                        <div class="product-subtitle">
-                            Country Tax
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-3">
-                        <div class="product-title">
-                            $280
-                        </div>
-                        <div class="product-subtitle">
-                            Product Insurance
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <div class="product-title">
-                            $580
-                        </div>
-                        <div class="product-subtitle">
-                            Ship to Jakarta
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-2">
-                        <div class="product-title text-success">
-                            $ {{ number_format($totalPrice ?? 0) }}
-                        </div>
-                        <div class="product-subtitle">
-                            Total
-                        </div>
-                    </div>
-
-                    <div class="col-8 col-md-3">
-                        <button type="submit" class="btn btn-success mt-4 px-4 btn-block">Checkout Now</button>
                     </div>
                 </div>
-
             </form>
-
-
-
-
-
         </div>
     </section>
-
-</div>
+    <!-- Checkout Section End -->
 @endsection
-
-@push('addon-script')
-<script src="/vendor/vue/vue.js"></script>
-<script src="https://unpkg.com/vue-toasted"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    var locations = new Vue({
-        el: "#locations",
-        mounted() {
-            AOS.init();
-            this.getProvincesData();
-        },
-        data: {
-            provinces: null,
-            regencies: null,
-            provinces_id: null,
-            regencies_id: null
-        },
-        methods: {
-            getProvincesData() {
-                var self = this;
-                axios.get('{{ route('api-provinces') }}')
-                .then(function(response) {
-                    self.provinces = response.data;
-                })
-            },
-            getRegenciesData() {
-                var self = this;
-                axios.get('{{ url('api/regencies') }}/' + self.provinces_id)
-                .then(function(response) {
-                    self.regencies = response.data;
-                })
-            },
-        },
-        watch: {
-            provinces_id: function(val, oldVal) {
-                this.regencies_id = null;
-                this.getRegenciesData();
-            }
-        }
-    });
-</script>
-@endpush
